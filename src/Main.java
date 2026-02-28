@@ -9,7 +9,7 @@ public class Main {
         String myName = "local.brawit";
         int myNum = 26;
         Point p1 = new Point(1,1);
-        Point p3 = p1;
+        Point p2 = p1;
         p1.x = 3;
         System.out.println("Name: " + myName);
         System.out.println("Age: " + myNum);
