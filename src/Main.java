@@ -1,6 +1,4 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import javax.sql.PooledConnection;
+
 import java.lang.String;
 import java.awt.*;
 
@@ -13,7 +11,6 @@ public class Main {
         int myRes = (int) Math.floor(2.1f);
         double myResu = Math.random() * 2;
         Point p1 = new Point(1,1);
-        Point p2 = p1;
         p1.x = 3;
         System.out.println("Name: " + myName);
         System.out.println("Age: " + myNum);
