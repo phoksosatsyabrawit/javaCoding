@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mortgage Calculation</title>
+</head>
+<style>
+    .childcontainerBody{
+        border: 3px solid #f1f1f1;
+        box-sizing: border-box;
+        width: 45%;
+        margin: auto;
+        padding: 8px 16px;
+    }
+    label, input, button {
+        display: inline-block;
+        width: 45%;
+        margin: 6px 12px;
+    }
+    label {
+        text-align: left;
+    }
+    button {
+        width: 95%;
+    }
+</style>
+<body>
+    <div class="parent.container">
+        <div class="childcontainerHeader">
+            <center><h2>Mortgage Calculation</h2></center>
+        </div>
+        <div class="childcontainerBody">
+            <label for="amount">Principal: </label>
+            <input type="text" placeholder="$" name="amount" required>
+            <label for="monthlyInterest">Monthly Interest: </label>
+            <input type="text" placeholder="%" name="monthlyInterest" required>
+            <label for="period">Period: </label>
+            <input type="text" placeholder="" name="period" required>
+            <label for="deposit">Deposit: </label>
+            <input type="text" placeholder="%" name="deposit" required>
+            <button type="submit" class="sumButton">Calculate</button>
+            <label for="monthlyPayment">Monthly Payment: </label>
+            <input type="text" placeholder="$" >
+        </div>
+    </div>
+</body>
+</html>
