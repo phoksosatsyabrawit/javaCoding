@@ -31,17 +31,23 @@
         </div>
         <div class="childcontainerBody">
             <label for="amount">Principal: </label>
-            <input type="text" placeholder="$" name="amount" required>
+            <input type="text" placeholder="$" id="amount" required>
             <label for="monthlyInterest">Monthly Interest: </label>
-            <input type="text" placeholder="%" name="monthlyInterest" required>
+            <input type="text" placeholder="%" id="monthlyInterest" required>
             <label for="period">Period: </label>
-            <input type="text" placeholder="" name="period" required>
+            <input type="text" placeholder="" id="period" required>
             <label for="deposit">Deposit: </label>
-            <input type="text" placeholder="%" name="deposit" required>
-            <button type="submit" class="sumButton">Calculate</button>
+            <input type="text" placeholder="%" id="deposit" required>
+            <button class="sumButton" onclick="monthlyPay()">Calculate</button>
             <label for="monthlyPayment">Monthly Payment: </label>
-            <input type="text" placeholder="$" >
+            <input type="text" placeholder="$" id="monthlyPayment" >
         </div>
     </div>
+    <script>
+        function monthlyPay(){
+            let inputAmount = document.getElementById("amount").value;
+            document.getElementById("monthlyPayment").value = inputAmount;
+        }
+    </script>
 </body>
 </html>
