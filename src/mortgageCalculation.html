@@ -44,10 +44,18 @@
         </div>
     </div>
     <script>
-        function monthlyPay(){
-            let inputAmount = document.getElementById("amount").value;
-            document.getElementById("monthlyPayment").value = inputAmount;
+        function monthlyPay() {
+            let inputAmount = Number(document.getElementById("amount").value);
+            let inputmonthlyInterest = Number(document.getElementById("monthlyInterest").value);
+            let inputPeriod = Number(document.getElementById("period").value);
+            let inputDeposit = Number(document.getElementById("deposit").value);
+
+            let sumpaymentMonthly = inputAmount + inputmonthlyInterest + inputPeriod + inputDeposit;
+
+            document.getElementById("monthlyPayment").value = sumpaymentMonthly;
         }
+
+
     </script>
 </body>
 </html>
