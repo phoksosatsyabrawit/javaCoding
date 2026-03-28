@@ -89,19 +89,35 @@
     </div>
     <div class="labelinputLogin">
         <label for="userName"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="userName" required>
+        <input type="text" placeholder="Enter Username" name="userName" id="userName" required>
         <label for="userPass"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="userPass" required>
-        <button type="submit">Login</button>
+        <input type="password" placeholder="Enter Password" name="userPass" id="userPass" required>
+        <button type="button" onclick="redirectmortgagePortal()">Login</button>
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
     </div>
     <div class="cancelforgetPass">
-        <button type="button" class="cancelButton">Cancel</button>
+        <button type="button" class="cancelButton" onclick="getbackDefault()">Cancel</button>
         <span class="forgetPass"><a href="#">Forgot password</a></span>
     </div>
-</div>
 </form>
+</div>
+<script>
+    function redirectmortgagePortal () {
+        const userName = "phok.sosatsyabrawit";
+        const userPass = "Braw$tlocal95";
+        const validUname = document.getElementById("userName").value;
+        const validUpass = document.getElementById("userPass").value;
+        if (validUname === userName && validUpass === userPass) {
+            window.open("http://localhost:9595/javaCoding/mortgage.html");
+        } else {
+            alert("Username and Password Incorrect ...");
+        }
+    }
+    function getbackDefault () {
+        window.location.href = ("http://localhost:9595/javaCoding/webPortal.html");
+    }
+</script>
 </body>
 </html>

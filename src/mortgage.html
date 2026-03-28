@@ -51,6 +51,11 @@
     border: none;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   }
+  .formButton {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 6px;
+  }
   .sumButton {
     width: 100%;
     margin-top: 8px;
@@ -70,6 +75,25 @@
     color: black;
     background-color: white;
   }
+  .cancelButton {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: none;
+    background-color: #0a3f87;
+    box-shadow: 0 3px 6px rgb(0, 0, 0, 0.5);
+    color: white;
+    font-family: Arial;
+    font-size: small;
+    cursor: pointer;
+  }
+  .cancelButton:hover {
+    font-family: Arial;
+    font-size: small;
+    opacity: 0.8;
+    color: black;
+    background-color: white;
+  }
 </style>
 <body>
   <div class="parentContainer">
@@ -82,11 +106,11 @@
           <input type="text" placeholder="$ please enter your amount" id="amount"required>
         </div>
         <div class="formGroup">
-          <label for="monthlyInterest">Monthly Interest:</label>
+          <label for="monthlyInterest">Interest (month):</label>
           <input type="text" placeholder="%" id="monthlyInterest">
         </div>
         <div class="formGroup">
-          <label for="period">Period:</label>
+          <label for="period">Period (year):</label>
           <input type="text" id="period">
         </div>
         <div class="formGroup">
@@ -100,6 +124,7 @@
       </div>
     <div class="formButton">
       <button class="sumButton" onclick="monthlyPayment()">Calculation</button>
+      <button type="button" class="cancelButton" onclick="getbackDefault()">Cancel</button>
     </div>
   </div>
   <script>
@@ -110,9 +135,8 @@
       let inputDeposit = Number(document.getElementById("deposit").value);
 
       let period = inputPeriod * 12;
-      let deposit = inputDeposit * inputAmount / 100;
-      let amountafterDeposit = inputAmount - deposit;
-      let sumamountplusInterest = amountafterDeposit * parseFloat(inputmonthlyInterest) * period /100;
+      let deposit = inputAmount - (inputDeposit * inputAmount / 100);
+      let sumamountplusInterest = deposit * parseFloat(inputmonthlyInterest) * period /100;
       let summonthlyPayment = sumamountplusInterest / period;
 
       const summonthlypaymentF = new Intl.NumberFormat('en-US', {
@@ -121,6 +145,9 @@
       }).format(summonthlyPayment);
 
       document.getElementById("monthlyPayment").value = summonthlypaymentF;
+    }
+    function getbackDefault () {
+      window.location.href = ("http://localhost:9595/javaCoding/webPortal.html");
     }
   </script>
 </body>
