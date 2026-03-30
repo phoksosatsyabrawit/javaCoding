@@ -14,17 +14,17 @@ public class mortgageCalculation {
         System.out.print("Monthly Interest: %");
         float monthlyInterest = mymonthlyInterest.nextFloat();
 
-        Scanner myPeriod = new Scanner(System.in);
+        Scanner myPer = new Scanner(System.in);
         System.out.print("Period: ");
-        short period = myPeriod.nextShort();
+        short period = myPer.nextShort();
 
         Scanner myDeposit = new Scanner(System.in);
         System.out.print("Deposit: %");
         short deposit = myDeposit.nextShort();
 
-        int depositCal = principal * deposit / myPercentage;
-        int principalafterDeposit = principal - depositCal;
-        float sumprinplusInterest = principalafterDeposit * monthlyInterest * period / myPercentage;
+        int depositCal = principal - (principal * deposit / myPercentage);
+        int myPeriod = period * 12;
+        float sumprinplusInterest = depositCal * monthlyInterest * myPeriod / myPercentage;
         float mymonthlyPaid = sumprinplusInterest / period;
 
         System.out.println("Monthly Paid: " + myCurr.format(mymonthlyPaid));
