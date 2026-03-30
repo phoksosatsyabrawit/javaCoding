@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class mortgageCalculation {
     public static void main(String[] args){
-        final byte myPercentage = 100;
+        final int myPercentage = 100;
         NumberFormat myCurr = NumberFormat.getCurrencyInstance();
 
         Scanner myPrin = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class mortgageCalculation {
 
         Scanner myPer = new Scanner(System.in);
         System.out.print("Period: ");
-        short period = myPer.nextShort();
+        int period = myPer.nextShort();
 
         Scanner myDeposit = new Scanner(System.in);
         System.out.print("Deposit: %");
@@ -25,7 +25,7 @@ public class mortgageCalculation {
         int depositCal = principal - (principal * deposit / myPercentage);
         int myPeriod = period * 12;
         float sumprinplusInterest = depositCal * monthlyInterest * myPeriod / myPercentage;
-        float mymonthlyPaid = sumprinplusInterest / period;
+        float mymonthlyPaid = sumprinplusInterest / myPeriod;
 
         System.out.println("Monthly Paid: " + myCurr.format(mymonthlyPaid));
     }
